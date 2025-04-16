@@ -1,16 +1,16 @@
 package main;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.regex.*;
-
+import java.util.logging.Logger;
 
 public class LogParser {
     private LogParser() {
     }        
     private static final Pattern logPattern = Pattern.compile("\\[(.*?)\\]\\s+(INFO||ERROR|WARN)\\s+(.*)");
-
+    private static final Logger logger = Logger.getLogger(LogParser.class.getName());
     public static List<LogEntry> parseLogs(List<String> logLines){
         List<LogEntry> logEntries = new ArrayList<>();
         for (String line : logLines){
@@ -21,7 +21,7 @@ public class LogParser {
                 String message = matcher.group(3);
                 logEntries.add(new LogEntry(timestamp, level, message));
             }else{
-                System.out.println("Invalid log entry: " + line);
+                logger.warning("Invalid log entry: " + line);
             }
         }
         return logEntries;

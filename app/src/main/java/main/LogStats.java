@@ -8,6 +8,7 @@ public class LogStats {
     private int errorCount;
     private int warningCount;
     private int infoCount;
+    private static final Logger logger = Logger.getLogger(LogStats.class.getName());
 
     public LogStats(List<LogEntry> logEntries) {
         this.logEntries = logEntries;
@@ -28,7 +29,7 @@ public class LogStats {
                 infoCount++;
             }
             else{
-                System.out.println("Unknown log level: " + level);
+                logger.info("Unknown log level: " + level);
             }
         }
     }
@@ -42,8 +43,8 @@ public class LogStats {
     public int getInfoCount() {
         return infoCount;
     }
+
     public void printStats() {
-        Logger logger = Logger.getLogger(LogStats.class.getName());
         logger.info("Log Statistics:");
         logger.info("ERROR: " + errorCount);
         logger.info("WARNING: " + warningCount);
