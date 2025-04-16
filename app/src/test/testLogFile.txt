@@ -1,0 +1,10 @@
+[2025-04-16 10:15:03] INFO  Server started on port 8080
+[2025-04-16 10:16:47] INFO  User 101 logged in
+[2025-04-16 10:17:12] WARN  Low memory detected
+[2025-04-16 10:18:55] ERROR Database connection failed
+[2025-04-16 10:20:31] INFO  User 102 logged in
+[2025-04-16 10:22:03] ERROR Timeout while processing request
+[2025-04-16 10:25:44] INFO  User 103 logged out
+[2025-04-16 10:27:09] WARN  High CPU usage detected
+[2025-04-16 10:28:22] INFO  Scheduled task completed
+[2025-04-16 10:30:00] ERROR Failed to write to log file
